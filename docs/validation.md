@@ -16,7 +16,7 @@ Held-out MAE: **2,198.32 expense units**; RMSE: **5,618.40**. The 3,500 MAE chal
 
 ## Behavioral checks
 
-`python -m pytest -q` passed 3 tests. Tests cover archive traversal rejection and invalid categories, normalization persistence, one training step, and prediction consistency after saving/loading.
+`python -m pytest -q` passed 4 tests. Tests cover archive traversal rejection and invalid categories, normalization persistence, one training step, and prediction consistency after saving/loading.
 
 ## Environment
 
@@ -31,3 +31,7 @@ The pinned requirements installed successfully into a new virtual environment wi
 ## Hosted CI
 
 [Python 3.11 GitHub Actions run](https://github.com/fatemeh-akbarifar/fcc-linear-regression/actions/runs/36242671069) completed successfully for the published implementation.
+
+## First-run downloads
+
+The CDN rejected Python's default HTTP user agent (403). The downloader now supplies an explicit client header; a fresh real HTTPS download matched the recorded checksum. A focused test verifies that header, complete file writing, and cache reuse.
