@@ -23,3 +23,11 @@ Held-out MAE: **2,198.32 expense units**; RMSE: **5,618.40**. The 3,500 MAE chal
 Core versions: NumPy 1.23.5, pandas 2.2.3, TensorFlow 2.16.2 and Keras 3.7.0. Dependency pins are in `requirements.txt`. No GPU was used. Results can vary across platforms; the neural-network seed is 42.
 
 The GitHub Actions workflow is configured separately; local success does not itself establish a successful hosted workflow run.
+
+## Clean-environment verification
+
+The pinned requirements installed successfully into a new virtual environment with no inherited site packages. `pip check` found no broken requirements, and this project's test suite passed in that environment. Python 3.11 hosted CI is tracked separately.
+
+## Hosted CI
+
+[Python 3.11 GitHub Actions run](https://github.com/fatemeh-akbarifar/fcc-linear-regression/actions/runs/36242671069) completed successfully for the published implementation.

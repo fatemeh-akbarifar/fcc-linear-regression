@@ -1,5 +1,7 @@
 # Health-cost prediction with a dense neural network
 
+[![Tests](https://github.com/fatemeh-akbarifar/fcc-linear-regression/actions/workflows/tests.yml/badge.svg)](https://github.com/fatemeh-akbarifar/fcc-linear-regression/actions/workflows/tests.yml)
+
 A supervised regression project that predicts insurance expenses from six demographic and lifestyle features. It demonstrates tabular preprocessing, leakage-aware splitting, neural-network training, early stopping, and evaluation in the original expense units.
 
 **Method:** a multilayer perceptron (dense neural network). The historical repository name contains “linear regression,” but the implemented model is nonlinear.
@@ -42,6 +44,22 @@ Verified held-out **MAE: 2,198.32** (challenge target: below 3,500); **RMSE: 5,6
 See [the reproducibility report](docs/validation.md) for measured results, commands, environment, and the limits of validation.
 
 ![Predicted versus actual expenses on the held-out test set](docs/predictions.png)
+
+## Use the saved model
+
+```python
+import pandas as pd
+import tensorflow as tf
+from PredictHealthCosts import encode_features
+
+model = tf.keras.models.load_model("artifacts/model.keras", compile=False)
+rows = pd.DataFrame([{
+    "age": 35, "sex": "female", "bmi": 25.0,
+    "children": 1, "smoker": "no", "region": "northeast"
+}])
+predicted_expenses = model(encode_features(rows), training=False).numpy().ravel()
+print(predicted_expenses)
+```
 
 ## Tests
 

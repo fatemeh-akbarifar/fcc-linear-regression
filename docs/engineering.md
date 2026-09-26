@@ -25,3 +25,7 @@ The modernization uses the simpler two-layer architecture from the later Colab v
 ## Reading the evidence
 
 The validation report describes newly executed runs. It does not retroactively claim that historical notebook outputs used the corrected evaluation pipeline. Unit tests verify behavior; they are not model-quality benchmarks.
+
+## Data provenance
+
+[Dataset checksums](data-manifest.json) identify the exact downloaded inputs used for validation. These are hashes of public dataset files, not private Drive content.
