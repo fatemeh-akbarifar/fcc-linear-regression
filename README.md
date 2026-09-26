@@ -25,6 +25,15 @@ Notebook: [health_cost_regression.ipynb](health_cost_regression.ipynb). [Open in
 
 ## Method
 
+```mermaid
+flowchart LR
+    A[Six tabular features] --> B[Fixed category encoding]
+    B --> C[Training-fitted normalization]
+    C --> D[Dense 64 + Dense 64]
+    D --> E[Expense prediction]
+    E --> F[Held-out MAE and RMSE]
+```
+
 1. Use an 80/20 outer split with `random_state=0`; reserve 20% of the training pool for validation using seed 42.
 2. Encode the original six features (`age`, `sex`, `bmi`, `children`, `smoker`, `region`) with fixed category mappings.
 3. Fit a Keras normalization layer **only on training rows**, and include it in the saved model.
