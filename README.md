@@ -6,6 +6,12 @@ A supervised regression project that predicts insurance expenses from six demogr
 
 **Method:** a multilayer perceptron (dense neural network). The historical repository name contains “linear regression,” but the implemented model is nonlinear.
 
+## Original work
+
+The original work includes a regularized neural-network regressor and a later two-layer variant. Both notebooks are preserved. Numerical results from later maintenance checks are labeled separately from the original work.
+
+[Original notebook and evidence](docs/original-work.md). The runnable edition below includes maintenance fixes; new validation numbers are kept separate from historical achievements.
+
 ## Run locally
 
 ```bash
@@ -46,9 +52,9 @@ The modernization uses the simpler two-layer architecture from the later Colab v
 
 `artifacts/` contains `model.keras`, `metrics.json`, `history.json`, and `predictions.csv`. Generated artifacts and downloaded data are ignored by Git. The run also saves `predictions.png`.
 
-## Verified results
+## Maintenance validation (September 2026)
 
-Verified held-out **MAE: 2,198.32** (challenge target: below 3,500); **RMSE: 5,618.40** across 268 test rows.
+The maintained implementation achieved held-out **MAE: 2,198.32** (challenge target: below 3,500); **RMSE: 5,618.40** across 268 test rows.
 
 See [the reproducibility report](docs/validation.md) for measured results, commands, environment, and the limits of validation.
 
